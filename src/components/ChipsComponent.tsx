@@ -66,7 +66,7 @@ export default function ChipsComponent() {
     <>
       <div className="flex justify-center w-full">
         <div className="flex flex-wrap w-[80%] border-gray-300 border-b-2 justify-center gap-2 p-2">
-          <ul className="flex flex-wrap gap-2">
+          <ul className="flex w-full flex-wrap gap-2">
             {chips?.map((chip) => (
               <ChipListItem
                 key={chip.id}
@@ -75,7 +75,7 @@ export default function ChipsComponent() {
               />
             ))}
             <input
-              className="outline-none bg-transparent text-gray-600"
+              className={`outline-none bg-transparent text-gray-600 ${!chips?.length && "w-full"}`}
               type="text"
               value={input}
               placeholder="Enter a name"
